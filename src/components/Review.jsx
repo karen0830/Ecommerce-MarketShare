@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Rating from "./Sidebar/rating";
+import Rating from "./Sidebar/Rating.jsx";
 import "./Review.css";
 
 const reviwtitle = "Add a Review";
