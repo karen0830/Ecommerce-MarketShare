@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../components/PageHeader";
-import PopularPost from "./PopularPost";
 import Tags from "./Tags";
-import Rating from "../../components/Sidebar/rating";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -15,7 +13,6 @@ import Review from "../../components/Review";
 import MostPopularPost from "../../components/Sidebar/MostPopularPost";
 import ProductDisplay from "./ProductDisplay";
 import { getAllProductsCompany } from "../../api/auth.products";
-const reviwtitle = "Add a Review";
 
 const SingleProduct = () => { 
   const [product, setProduct] = useState();
