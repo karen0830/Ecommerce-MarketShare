@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
-import Rating from "../../components/Sidebar/rating";
+import Rating from "../../components/Sidebar/rating.jsx";
 import "./ProductCards.css";
 
 const ProductCards = ({ products, GridList }) => {

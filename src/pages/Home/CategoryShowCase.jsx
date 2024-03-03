@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Rating from "../../components/Sidebar/rating.jsx";
 
 const title = "Nuestros Productos";
 
@@ -171,6 +172,9 @@ const CategoryShowCase = () => {
                         >
                           <div className="course-cate">
                             <a href="#">{cate}</a>
+                          </div>
+                          <div className="course-reiew">
+                            <Rating />
                           </div>
                         </div>
                       </div>
