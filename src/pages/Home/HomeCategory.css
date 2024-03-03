@@ -1,0 +1,7 @@
+.background-section {
+  background-color: #242424;
+}
+
+.category-section.style-4 .section-wrapper .category-item .category-inner::after {
+  border-radius: 1.13rem !important;
+}

@@ -1,0 +1,55 @@
+.dark {
+  background: #1c1c1c;
+}
+
+.white {
+  color: #ffff;
+}
+
+.content-li ul li {
+  padding: 3px 0;
+}
+
+.content-li ul li a {
+  color: #ffff;
+}
+
+.content-li ul li a:hover {
+  color: #5da9fd;
+}
+
+.lab-ubication {
+  padding: 2px 0;
+  font-weight: 500;
+  list-style: none;
+}
+
+footer.style-2
+  .footer-top
+  .footer-item.our-address
+  .footer-inner
+  .footer-content
+  .content
+  ul.office-address
+  li {
+  color: white !important;
+}
+
+footer.style-2 .footer-bottom,
+.feature-section.style-3,
+.section-bg-ash {
+  background-color: "#1c1c1c" !important;
+  border-top: "1px solid rgba(47, 51, 54, 255)" !important;
+}
+
+.footer-bottom .section-wrapper p a {
+  color: #287bff;
+}
+
+footer.style-2 .footer-bottom .section-wrapper .footer-bottom-list a {
+  color: #fff;
+}
+
+.footer-bottom .section-wrapper p a:hover {
+  color: #fff !important;
+}

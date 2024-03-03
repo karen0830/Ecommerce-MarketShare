@@ -1,0 +1,27 @@
+.pageheader-section .pageheader-content h2 {
+  color: #1655e9;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: #1655e9;
+}
+
+.shop-page .shop-product-wrap .product-item .product-content h5 a,
+.shop-page .shop-product-wrap .product-list-item .product-content h5 a {
+  color: white;
+}
+
+.shop-page .shop-title .product-view-mode .gridActive a {
+  color: #1655e9
+}
+
+.shop-page .shop-title .product-view-mode a {
+  color: #fff;
+}
+
+.listActive .list, .gridActive .grid {
+  color: #1655e9 !important;
+}

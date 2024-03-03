@@ -1,0 +1,16 @@
+.selected-category {
+  background-color: #287bff;
+}
+
+.category-inner {
+  border-radius: 1.13rem;
+}
+
+.shop-page .shop-title {
+  background-color: #1c1c1c;
+}
+
+.bg-warning {
+  --bs-bg-opacity: 1;
+  background-color: #1655e9 !important;
+}

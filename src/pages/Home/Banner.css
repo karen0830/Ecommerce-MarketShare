@@ -1,0 +1,11 @@
+.banner-background {
+  background-color: #242424;
+}
+
+.banner-section.style-4 .banner-content h2 {
+  color: white;
+}
+
+.banner-section.style-4 .banner-content p {
+  color: #ccc;
+}

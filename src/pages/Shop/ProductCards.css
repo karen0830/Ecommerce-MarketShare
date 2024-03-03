@@ -1,0 +1,14 @@
+.shop-page
+  .shop-product-wrap
+  .product-item
+  .product-thumb
+  .product-action-link
+  a,
+.shop-page
+  .shop-product-wrap
+  .product-list-item
+  .product-thumb
+  .product-action-link
+  a {
+  background: #105dff;
+}
