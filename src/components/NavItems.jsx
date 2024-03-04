@@ -65,6 +65,11 @@ const NavItems = () => {
                   <div className="menu">
                     <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
                       <li>
+                        <NavLink to={"https://main--marketshare.netlify.app/"} style={{ color: "#fff" }}>
+                          Espacio Socia
+                        </NavLink>
+                      </li>
+                      <li>
                         <Link to={`/:${user.id}`} style={{ color: "#fff" }}>
                           Inicio
                         </Link>
@@ -100,7 +105,7 @@ const NavItems = () => {
                     )}
                   </div>
                   <NavDropdown id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/login" onClick={() => {handleLogout()}}>
+                    <NavDropdown.Item href="/login" onClick={() => { handleLogout() }}>
                       Cerrar Sesion
                     </NavDropdown.Item>
                     <NavDropdown.Item href={`/cart-page/:${user.id}`}>
