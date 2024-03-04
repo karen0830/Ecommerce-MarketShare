@@ -120,6 +120,11 @@ const NavItems = () => {
                   <div className="menu">
                     <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
                       <li>
+                        <NavLink to={"https://main--marketshare.netlify.app/"} style={{ color: "#fff" }}>
+                          Espacio Socia
+                        </NavLink>
+                      </li>
+                      <li>
                         <Link to="/" style={{ color: "#fff" }}>
                           Inicio
                         </Link>
