@@ -8,20 +8,20 @@ const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    // Fetch cart items from local storage
-    async function getShopping() {
+    // Obtener los elementos del carrito del almacenamiento local
+    async function obtenerCarrito() {
       const res = await getShoppingCart();
       setCartItems(res.data);
     }
-    getShopping();
+    obtenerCarrito();
   }, []);
 
-  // Calculate the total price for each item in the cart
-  const calculateTotalPrice = (item) => {
+  // Calcular el precio total para cada artículo en el carrito
+  const calcularPrecioTotal = (item) => {
     return item.price * item.quantity;
   };
 
-  // Handle quantity increase
+  // Manejar el aumento de la cantidad
   const handleIncrease = async (item) => {
     try {
       const Data = {
@@ -37,11 +37,11 @@ const CartPage = () => {
     }
   };
 
-  // Handle quantity decrease
+  // Manejar la disminución de la cantidad
   const handleDecrease = async (item) => {
     try {
       const Data = {
-        cartItemId: item.idCartItem, 
+        cartItemId: item.idCartItem,
         quantityToRemove: 1
       }
       const res = await decrementProduct(Data);
@@ -53,10 +53,10 @@ const CartPage = () => {
     }
   };
 
-  // Handle item removal
+  // Manejar la eliminación de un artículo
   const handleRemoveItem = async (item) => {
     try {
-      console.log("irem", item);
+      console.log("item", item);
       const Data = {
         cartId: item.idCartItem
       }
@@ -69,30 +69,30 @@ const CartPage = () => {
     }
   };
 
-  // Calculate the cart subtotal
+  // Calcular el subtotal del carrito
   const cartSubtotal = cartItems.reduce((total, item) => {
-    return total + calculateTotalPrice(item);
+    return total + calcularPrecioTotal(item);
   }, 0);
 
-  // Calculate the order total
+  // Calcular el total de la orden
   const orderTotal = cartSubtotal;
 
   return (
     <div>
-      <PageHeader title={"Shop Cart"} curPage={"Cart Page"} />
+      <PageHeader title={"Carrito de Compras"} curPage={"Página del Carrito"} />
       <div className="shop-cart padding-tb">
         <div className="container">
           <div className="section-wrapper">
-            {/* cart top */}
+            {/* Parte superior del carrito */}
             <div className="cart-top">
               <table>
                 <thead>
                   <tr>
-                    <th className="cat-product">Product</th>
-                    <th className="cat-price">Price</th>
-                    <th className="cat-quantity">Quantity</th>
+                    <th className="cat-product">Producto</th>
+                    <th className="cat-price">Precio</th>
+                    <th className="cat-quantity">Cantidad</th>
                     <th className="cat-toprice">Total</th>
-                    <th className="cat-edit">Edit</th>
+                    <th className="cat-edit">Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -137,11 +137,11 @@ const CartPage = () => {
                           </div>
                         </td>
                         <td className="cat-toprice">
-                          ${calculateTotalPrice(item)}
+                          ${calcularPrecioTotal(item)}
                         </td>
                         <td className="cat-edit">
                           <button href="#" onClick={() => handleRemoveItem(item)}>
-                            <img src="images/shop/del.png" alt="" />
+                            <img src="/images/shop/del.png" alt="" />
                           </button>
                         </td>
                       </tr>
@@ -151,21 +151,21 @@ const CartPage = () => {
               </table>
             </div>
 
-            {/* cart bottom */}
+            {/* Parte inferior del carrito */}
             <div className="cart-bottom">
-              {/* checkout box */}
+              {/* Cuadro de pago */}
               <div className="cart-checkout-box">
                 <form className="coupon" action="/">
                   <input
                     type="text"
                     name="coupon"
-                    placeholder="Coupon Code..."
+                    placeholder="Código de Cupón..."
                     className="cart-page-input-text"
                   />
-                  <input type="submit" value="Apply Coupon" />
+                  <input type="submit" value="Aplicar Cupón" />
                 </form>
                 <form className="cart-checkout" action="/">
-                  <input type="submit" value="Update Cart" />
+                  <input type="submit" value="Actualizar Carrito" />
                   {/* <Link to="/check-out"><input type="submit" value="Proceed to Checkout" /></Link> */}
                   <div>
                     <CheckoutPage />
@@ -173,13 +173,13 @@ const CartPage = () => {
                 </form>
               </div>
 
-              {/* shopping box */}
+              {/* Cuadro de envío */}
               <div className="shiping-box">
                 <div className="row">
-                  {/* shipping  */}
+                  {/* Envío */}
                   <div className="col-md-6 col-12">
                     <div className="calculate-shiping">
-                      <h3>Calculate Shipping</h3>
+                      <h3>Calcular Envío</h3>
                       <div className="outline-select">
                         <select>
                           <option value="volvo">País</option>
@@ -201,30 +201,30 @@ const CartPage = () => {
                       <input
                         type="text"
                         name="coupon"
-                        placeholder="Postcode/ZIP"
+                        placeholder="Código Postal"
                         className="cart-page-input-text"
                       />
-                      <button type="submit">Update Total</button>
+                      <button type="submit">Actualizar Total</button>
                     </div>
                   </div>
 
-                  {/* cart total */}
+                  {/* Total del carrito */}
                   <div className="col-md-6 col-12">
                     <div className="cart-overview">
-                      <h3>Cart Totals</h3>
+                      <h3>Total del Carrito</h3>
                       <ul className="lab-ul">
                         <li>
-                          <span className="pull-left">Cart Subtotal</span>
+                          <span className="pull-left">Subtotal del Carrito</span>
                           <p className="pull-right">$ {cartSubtotal}</p>
                         </li>
                         <li>
                           <span className="pull-left">
-                            Shipping and Handling
+                            Envío y Manipulación
                           </span>
-                          <p className="pull-right">Free Shipping</p>
+                          <p className="pull-right">Envío Gratis</p>
                         </li>
                         <li>
-                          <span className="pull-left">Order Total</span>
+                          <span className="pull-left">Total de la Orden</span>
                           <p className="pull-right">
                             $ {orderTotal.toFixed(2)}
                           </p>

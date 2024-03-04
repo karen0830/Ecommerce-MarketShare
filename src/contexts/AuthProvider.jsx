@@ -5,6 +5,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { loginRequest, verityTokenRequest } from '../api/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 export const useAuth = () => {
@@ -72,8 +73,7 @@ const AuthProvider = ({ children }) => {
   }, [isAuthenticated]);
 
   const logOut = () => {
-    localStorage.removeItem('genius-token');
-    return signOut(auth);
+    
   }
 
   return (
