@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import { Link } from "react-router-dom";
-import delImgUrl from "../../assets/images/shop/del.png";
 import CheckoutPage from "./CheckoutPage";
 import { addShoppingCart, decrementProduct, deleteCart, getShoppingCart } from "../../api/auth";
 
@@ -142,7 +141,7 @@ const CartPage = () => {
                         </td>
                         <td className="cat-edit">
                           <button href="#" onClick={() => handleRemoveItem(item)}>
-                            <img src={delImgUrl} alt="" />
+                            <img src="images/shop/del.png" alt="" />
                           </button>
                         </td>
                       </tr>

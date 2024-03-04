@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/images/logo/Logo_MarketShare.png";
 import { AuthContext } from "../contexts/AuthProvider";
 import { NavDropdown } from "react-bootstrap";
 import "./NavItems.css";
@@ -57,7 +56,7 @@ const NavItems = () => {
             <div className="logo-search-acte">
               <div className="logo">
                 <Link to="/">
-                  <img src={logo} alt="logo" />
+                  <img src="images/logo/Logo_MarketShare.png" alt="logo" />
                 </Link>
               </div>
             </div>

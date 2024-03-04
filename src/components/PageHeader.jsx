@@ -7,7 +7,7 @@ const PageHeader = ({ title, curPage }) => {
     <div
       className="pageheader-section"
       style={{
-        backgroundImage: "url(../assets/images/pageheader/bg/01.jpg)",
+        backgroundImage: "url(/images/pageheader/bg/01.jpg)",
       }}
     >
       <div className="container">

@@ -8,37 +8,37 @@ const btnText = "Empieza Ahora";
 
 const categoryList = [
   {
-    imgUrl: "../assets/images/category/01.jpg",
+    imgUrl: "images/category/01.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
     title: "DSLR Camera",
   },
   {
-    imgUrl: "../assets/images/category/02.jpg",
+    imgUrl: "images/category/02.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
     title: "Shoes",
   },
   {
-    imgUrl: "../assets/images/category/03.jpg",
+    imgUrl: "images/category/03.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
     title: "Photography",
   },
   {
-    imgUrl: "../assets/images/category/04.jpg",
+    imgUrl: "images/category/04.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
     title: "Formal Dress",
   },
   {
-    imgUrl: "../assets/images/category/05.jpg",
+    imgUrl: "images/category/05.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
     title: "Colorful Bags",
   },
   {
-    imgUrl: "../assets/images/category/06.jpg",
+    imgUrl: "images/category/06.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
     title: "Home Decor",
