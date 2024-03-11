@@ -226,3 +226,32 @@ export const getTokenSocialNetwork= async (Data) => {
     console.log(error);
   }
 } 
+
+export const getReviews = async (data) => {
+  try {
+    const response = await ruta_protegida().post("/getReviews", data);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const addReviews = async (data) => {
+  try {
+    const response = await ruta_protegida().post("/commentProduct", data);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export const deleteReviw_ = async (data) => {
+  try {
+    const response = await ruta_protegida().post("/deleteReview", data);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}

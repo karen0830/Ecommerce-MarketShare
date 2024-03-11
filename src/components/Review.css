@@ -1,15 +1,107 @@
 .shop-single .review .review-nav li {
-    list-style: none;
-    padding: 13px 33px;
-    background: #1c1c1c;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .RevActive .rev,
-  .DescActive .desc {
-    background: #287bff !important;
-  }
+  list-style: none;
+  padding: 13px 33px;
+  background: #1c1c1c;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.RevActive .rev,
+.DescActive .desc {
+  background: #287bff !important;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+}
+
+.star {
+  display: inline-block;
+  font-size: 24px;
+  color: grey;
+  /* color por defecto de las estrellas */
+  cursor: pointer;
+}
+
+.star:hover {
+  color: #287bff;
+  /* color de las estrellas al pasar el ratón por encima */
+}
+
+.star.selected {
+  color: #287bff;
+  /* color de las estrellas seleccionadas */
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Z-index alto para que se sobreponga a todo */
+}
+
+.modal-review {
+  position: absolute;
+  background-color: #1c1c1c;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 50%;
+  border-radius: 8px;
+  z-index: 10000;
+  /* Asegúrate de que el modal esté por encima del overlay */
+}
+
+.modal-review button {
+  background-color: #242424;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.Tile-Review, .P-content-Review {
+  /* Estilos para el contenido del modal */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.default-button {
+  background: #287bff;
+  color: #fff;
+}
+
+.options-delete{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}

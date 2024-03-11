@@ -99,7 +99,7 @@ const SingleProduct = () => {
                 </div>
 
                 <div className="review">
-                  <Review />
+                  <Review id={id}/>
                 </div>
               </article>
             </div>
