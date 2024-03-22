@@ -34,9 +34,9 @@ const NavItems = () => {
       <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
         <div className="container">
           <div className="header-top-area">
-            <Link to="/signup" className="lab-btn me-3">
+            {/* <Link to="/signup" className="lab-btn me-3">
               <span>Crear Cuenta</span>
-            </Link>
+            </Link> */}
             <Link to="/login">Iniciar Sesion</Link>
           </div>
         </div>
@@ -65,7 +65,7 @@ const NavItems = () => {
                   <div className="menu">
                     <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
                       <li>
-                        <NavLink to={"http://localhost:5173/"} style={{ color: "#fff" }}>
+                        <NavLink to={"https://main--marketshare.netlify.app"} style={{ color: "#fff" }}>
                           Espacio Social
                         </NavLink>
                       </li>
