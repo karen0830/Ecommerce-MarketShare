@@ -5,7 +5,6 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { loginRequest, verityTokenRequest } from '../api/auth';
-import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 export const useAuth = () => {
@@ -40,35 +39,35 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-
-  useEffect(() => {
-    async function checkLogin() {
-      const Token = localStorage.getItem("token");
-      if (!Token) {
-        setIsAuthenticated(false);
-        setLoading(false);
-        return setUser(null);
-      } else {
-        try {
-          const res = await verityTokenRequest(Token);
-          console.log(res.data);
-          if (!res.data) {
-            setIsAuthenticated(false);
-            setLoading(false);
-            return;
-          } else {
-            setIsAuthenticated(true);
-            setUser(res.data);
-            setLoading(false);
-          }
-        } catch (error) {
-          console.log(error);
+  async function checkLogin() {
+    const Token = localStorage.getItem("token");
+    if (!Token) {
+      setIsAuthenticated(false);
+      setLoading(false);
+      return setUser(null);
+    } else {
+      try {
+        const res = await verityTokenRequest(Token);
+        console.log(res.data);
+        if (!res.data) {
           setIsAuthenticated(false);
-          setUser(null);
+          setLoading(false);
+          return;
+        } else {
+          setIsAuthenticated(true);
+          setUser(res.data);
           setLoading(false);
         }
+      } catch (error) {
+        console.log(error);
+        setIsAuthenticated(false);
+        setUser(null);
+        setLoading(false);
       }
     }
+  }
+
+  useEffect(() => {
     checkLogin();
   }, [isAuthenticated]);
 
@@ -84,7 +83,8 @@ const AuthProvider = ({ children }) => {
       setUser,
       signIn,
       createUser,
-      logOut
+      logOut,
+      checkLogin
     }}>
       {children}
     </AuthContext.Provider>

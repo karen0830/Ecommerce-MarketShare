@@ -10,16 +10,34 @@ import ProductCards from "./ProductCards";
 const showResult = "Showing 01 - 12 of 139 Results";
 import "./Shop.css";
 import { getAllProductsCompany } from "../../api/auth.products";
-import { AuthContext } from "../../contexts/AuthProvider";
+import { AuthContext, useAuth } from "../../contexts/AuthProvider";
+import { useLocation } from "react-router-dom";
 
 const Shop = () => {
   const [GridList, setGridList] = useState(true);
-
+  const { checkLogin } = useAuth();
   const [products, setProducts] = useState(null);
   const { user, logOut, isAuthenticated } = useContext(AuthContext);
 
   //   category active colors
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const location = useLocation();
+  const token = new URLSearchParams(location.search).get("token");
+
+  useEffect(() => {
+    console.log(token, " totok");
+    const tokenLocal = localStorage.getItem("token");
+    if (token && token != "null") {
+      localStorage.setItem('token', token)
+      checkLogin();
+    } else if (!tokenLocal) {
+      let tokenLocal = localStorage.getItem("token");
+      if (tokenLocal) {
+        localStorage.removeItem("token");
+        checkLogin();
+      }
+    }
+  }, [token])
 
   useEffect(() => {
     async function getProducts() {

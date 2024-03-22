@@ -37,6 +37,7 @@ const AppRouter = () => {
           <Route element={<PublicRoute />}>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/token" element={<Shop />} />
             {/* Si hay un usuario autenticado, incluye el ID en la ruta */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
