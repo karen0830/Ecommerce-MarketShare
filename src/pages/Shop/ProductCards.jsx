@@ -43,7 +43,7 @@ const ProductCards = ({ products, GridList }) => {
                 <p className="productRating">
                   <Rating />
                 </p>
-                <h6 className="text-white">${product.price}</h6>
+                <h6 className="text-white">${product.priceTaxIncl}</h6>
               </div>
             </div>
             <div className="product-list-item">

@@ -255,3 +255,23 @@ export const deleteReviw_ = async (data) => {
     return error;
   }
 }
+
+export const addPurchase = async (data) => {
+  try {
+    if (data.price == null) {
+      data.total = 0
+    }else data.total = data.price * data.quantity;
+
+    console.log(data.total);
+    const info = {
+      cartItemId: data.idCartItem,
+      cantidad: data.quantity,
+      total: data.total 
+    }
+    const response = await ruta_protegida().post("/addPurchase", info);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}

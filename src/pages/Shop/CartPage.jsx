@@ -168,7 +168,7 @@ const CartPage = () => {
                   <input type="submit" value="Actualizar Carrito" />
                   {/* <Link to="/check-out"><input type="submit" value="Proceed to Checkout" /></Link> */}
                   <div>
-                    <CheckoutPage />
+                  <CheckoutPage cartItems={cartItems} setCartItems={setCartItems}/>
                   </div>
                 </form>
               </div>
